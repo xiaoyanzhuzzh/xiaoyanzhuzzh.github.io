@@ -162,8 +162,26 @@
 <h4 id="3-_关键字">3. 关键字</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"keywords"</span> content=<span class="string">"some keywords of page"</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>许多网站提供了搜寻服务，meta tag就是用来协助搜索引擎，并且协助网友们找到您的网站，增加您的网站流量。<br>在搜索网站的资料库中都要以一些关键字【keywords】作为网页索引，也要存一小段网页描述，所以可以使用meta tag直接告诉它。</p>
 <h4 id="4-_设定网页编码">4. 设定网页编码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="5-_用何编辑器完成的网页">5. 用何编辑器完成的网页</h4><p><code>bash</code></p>
-<p>当然，只有浏览器可以接受这些附加的头部字段，并能以适当的方式使用它们时，这些字段才有意义。</p>
+<h4 id="5-_用何编辑器完成的网页">5. 用何编辑器完成的网页</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"generator"</span> content=<span class="string">"Notepad"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>大部分所见即所得（What you see is what you get）的网页制作软件都会自动加上这行字。</p>
+<h4 id="6-_网页内容摘要">6. 网页内容摘要</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"description"</span> content=<span class="string">"好美的網頁啊！"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>通常搜索引擎都会以网页的前15个字作为网页内容摘要，列于搜索结果上。但是有时候网页的前15个字只是一些不能代表网页的内容，例如：日期，时间等。由您提供网页的内容摘要为较好的方式。</p>
+<h4 id="7-_作者">7. 作者</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"author"</span> content=<span class="string">"****"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>告诉搜索引擎网页是由谁制作。</p>
+<h4 id="8-_版权">8. 版权</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"copyright"</span> content=<span class="string">"本网页著作权为***所有"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="9-换页特效">9.换页特效</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"Page-Exit"</span> content=<span class="string">"revealTrans(Transition=20)"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>并不是每篇网页都需要换页特效或是适合使用换页特效，也不是四者一定要同时使用，可以自行决定使用时机。我建议使用在游记，相簿，或是介绍风景的网页上。<br>http-equiv=”Page-Exit” 指定换页特效所发生的时机。</p>
+<blockquote>
+<p>http-equiv=”Page-Enter” 进入本页<br>http-equiv=”Page-Exit”　离开本页<br>http-equiv=”Site-Enter” 进入本站<br>http-equiv=”Site-Exit” 离开本站</p>
+</blockquote>
+<p>content=”revealTrans(Transition=20)” 指定换页时的特效。</p>
+<blockquote>
+<p>特效有两种：blendTrans和revealTrans</p>
+<ul>
+<li>content=”blendTrans(Duration=3.0)” 设定换页特效为【淡入淡出】。Duration=value是设定特效持续的时间（秒），过短过长都不好，太短看不出来，太长浪费浏览时间，建议在3-5秒，即 3.0 &lt; value &lt; 5.0。</li>
+<li>content=”revealTrans(Transition=20)” 设定24种换页特效方式。Transition=value中的value可以是0-23。revealTrans可設定時間，如：content=”revealTrans(Transition=20 Duration=3.0)”，但设定时间若太短，特效可能未完成就被中断，建议省略。</li>
+</ul>
+</blockquote>
 </li>
 </ul>
 
