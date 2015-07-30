@@ -148,14 +148,14 @@
   <section class="post">
     <p>最近在用HTML和CSS写一个个人的网页，关于meta的了解我知道的特别少，在这里写点笔记帮助自己理解一下，也希望给有需要的朋友们一些帮助。<br>首先，meta tag是写在网页的head tag中，title tag的下一行，不会显示在浏览器的视图窗口，在 HTML 中，<meta> 标签没有结束标签。<br>其次，meta tag的用法有很多，主要有两种属性：name和http-equiv。<br><a id="more"></a></p>
 <blockquote>
-<p>大部份的META TAG設定與搜尋引擎有關。</p>
+<p>大部份的META TAG设定与搜索引擎有关。</p>
 </blockquote>
 <ul>
 <li><p>name属性主要描述网页，相对应的属性是content（网页内容），这些内容主要是便于搜索引擎机器人查找，分类。这其中最重要的是description（站点在搜索引擎上的描述）和keywords（分类关键字），所以应该给每页加一个meta tag.<br><strong>格式如下</strong>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"description"</span> content=<span class="string">"A description of the page"</span> /&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>http-equiv属性为content属性的键值对提供了HTTP头信息，而且可以仿真HTTP响应头。</p>
-<h4 id="1-_自動更新">1. 自動更新</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"refresh"</span> content=<span class="string">"15"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="1-_自动更新">1. 自动更新</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"refresh"</span> content=<span class="string">"15"</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>设定合适的秒数，上例为每15秒重新下载（refresh）网页一次。很适合一些财经网站或运动网站，因为他们都提供【即时新闻】，每分钟自动更新网页一次，以展示当时的股票，指数或是比赛成绩等等。若希望网页每5分钟自动更新一次，就设定content=”300”.若您的网页内容是固定的，就没必要设定自动更新。即使设定了自动更新，网页内容也不会改变。</p>
 <h4 id="2-_转址服务">2. 转址服务</h4><p>个人网页搬家时，较好的解决方法是保留原网页的首页，在上面等个乔迁声明及新址连接以引导网友，并可利用自动更新做为转址服务。通常设定3~10秒以展示一小段搬家讯息，您也可以设定为0秒，立即转址。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"refresh"</span> content=<span class="string">"3;URL=http://blog.huayuworld.org/hcc928"</span>&gt;</span><br></pre></td></tr></table></figure>
@@ -179,7 +179,7 @@
 <p>特效有两种：blendTrans和revealTrans</p>
 <ul>
 <li>content=”blendTrans(Duration=3.0)” 设定换页特效为【淡入淡出】。Duration=value是设定特效持续的时间（秒），过短过长都不好，太短看不出来，太长浪费浏览时间，建议在3-5秒，即 3.0 &lt; value &lt; 5.0。</li>
-<li>content=”revealTrans(Transition=20)” 设定24种换页特效方式。Transition=value中的value可以是0-23。revealTrans可設定時間，如：content=”revealTrans(Transition=20 Duration=3.0)”，但设定时间若太短，特效可能未完成就被中断，建议省略。</li>
+<li>content=”revealTrans(Transition=20)” 设定24种换页特效方式。Transition=value中的value可以是0-23。revealTrans可设定时间，如：content=”revealTrans(Transition=20 Duration=3.0)”c</li>
 </ul>
 </blockquote>
 </li>
