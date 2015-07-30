@@ -146,18 +146,26 @@
   </header>
 
   <section class="post">
-    <p>时隔几个月后，又听到大胡子老师的课了。<br><a id="more"></a></p>
-<p>最近正在做一个AngularJs的项目，被JS的callback搞得晕头转向。看了几个回调的例子后，貌似有点理解了。下面是我对回调函数的理解，要是理解错了，请指正，不甚感激。<br>第一次到公司，就被随处可见的大白板震惊到了，其上有红，黄，蓝等各色的便利贴，格外吸引眼球。<br>几个月后，当我从老师们的讲解中听闻到敏捷开发，以及敏捷开发的各种工具，我再也不能也不想忽略它们的存在。</p>
-<p>其实白板就是我们的物理卡墙，日常工作中可以辅助到我们的还有电子卡墙，诸如Trello, Mingles等。</p>
-<p>为什么要使用卡墙呢？我的理解是在软件开发的过程中，我们需要一个可视化的工具帮助我们了解团队其他成员以及开发工作的进展，及时沟通以便全局优化，消除浪费。</p>
-<h3 id="卡墙必备之User_Story">卡墙必备之User Story</h3><h4 id="一、User_Story的INVEST原则：">一、User Story的INVEST原则：</h4><ol>
-<li>Independent(独立性)：每个User Story需要功能完整且相对于另一个User Story尽可能是功能独立的部分。</li>
-<li>Negotiable(可协商的)：一个User Story是便于沟通的。它包含故事详情的简短描述。这些详情是通过讨论阶段来完成的。一张还有很多详情的卡片实际上减少了和客户的会谈。</li>
-<li>Valuable(有价值的)： 每个User Story需对用户有价值。</li>
-<li>Estimable(可估量的)：开发者需要去估计一个User Story以便确定有限级并对故事进行规划</li>
-<li>Small(短小的)：一个好的故事应该在工作量上短小，描述具有代表性，而且不超过2-3人周的工作量。超过这个范围的用户故事，将会在划分范围和估计时出现很多错误。</li>
-<li>Testable(可测试的)：一个User Story是可测试的以便用于确认完成，记住我们不开发不能测试的故事。</li>
+    <p>最近正在做一个AngularJs的项目，被JS的callback搞得晕头转向。看了几个回调的例子后，貌似有点理解了。下面是我对回调函数的理解，要是理解错了，请指正，不甚感激。<br><a id="more"></a></p>
+<h3 id="一、什么是callback">一、什么是callback</h3><p>JS官方解释：<br>A callback is a function that is passed as an argument to another function and is executed after its parent function has completed.<br>从这句话，可以看出从三个方面理解一下callback：</p>
+<ol>
+<li>callback即回调，回头调用的意思</li>
+<li>callback作为另外一个方法的参数；</li>
+<li>callback的执行顺序；</li>
 </ol>
+<h3 id="二、合适使用callabck">二、合适使用callabck</h3><h4 id="1-_顺序执行的时候可以使用callback">1. 顺序执行的时候可以使用callback</h4><p>举个现实的例子：约会结束后你送你女朋友回家，离别时，你肯定会说：“到家了给我发条信息，我很<br>担心你。”对不，然后你女朋友回家以后还真给你发了条信息。小伙子，你有戏了。其实这就是一个回调的过程。</p>
+<p>你留了个函数sendMessage给你女朋友.你女朋友必须先回到家goHome，才能执行函数sendMessage.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">sendMessage</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    console.log(<span class="string">'I am sending message!'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> goHome(callback) &#123;</span><br><span class="line"></span><br><span class="line">    console.log(<span class="string">'I am going home!'</span>);</span><br><span class="line">    callback();</span><br><span class="line">&#125;</span><br><span class="line">goHome(sendMessage);</span><br></pre></td></tr></table></figure></p>
+<p>这里必须清楚一点：函数sendMessage是以参数形式传给函数goHome的，那么函数sendMessage就叫回调函数。</p>
+<h4 id="那么问题来了:">那么问题来了:</h4><p>一定要以参数形式传过去吗，我不可以直接在函数goHome里面调用函数sendMessage吗？也就是写成下面这种形式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">sendMessage</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    console.log(<span class="string">'I am sending message!'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">goHome</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    console.log(<span class="string">'I am going home!'</span>);</span><br><span class="line">    sendMessage();</span><br><span class="line">&#125;</span><br><span class="line">goHome();</span><br></pre></td></tr></table></figure></p>
+<p>答案当然是可以的。但是这样会将回调函数限制死了，失去了将回调含住作为变量的灵活性。</p>
+<h4 id="2-_JS异步编程时必须使用callback">2. JS异步编程时必须使用callback</h4><p>大家都知道JS是个单线程的动态语言。</p>
+<h3 id="三、callback的写法">三、callback的写法</h3><ol>
+<li>具体函数的形式（如代码段一）</li>
+<li>匿名函数的形式<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> goHome(callback) &#123;</span><br><span class="line">    console.log(<span class="string">'I am going home!'</span>);</span><br><span class="line">    callback();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">goHome(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line"></span><br><span class="line">    console.log(<span class="string">'I am a anonymous function!'</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="四、callback可以嵌套">四、callback可以嵌套</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">takePhotoes</span><span class="params">(callback)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'I am taking photoes!'</span>);</span><br><span class="line">    callback();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">goHome</span><span class="params">(callback)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'I am going home!'</span>);</span><br><span class="line">    callback();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">goHome(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    takePhotoes(<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'I am sending photoes with wechat!'</span>)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>但是当很多个callabck嵌套使用的使用的时候，我们就会陷入一种叫做回调地狱（callback hell）的境地。<br>预知更多详情，请自己去学习了解callback hell并且学习callback hell终结者promise。</p>
 
   </section>
 
