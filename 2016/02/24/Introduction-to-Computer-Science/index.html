@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>TW实习必备篇之：卡墙 | 缺心眼的慧小猪</title>
+    <title>Introduction to Computer Science | 缺心眼的慧小猪</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="一名准ThoughtWorker。">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="TW实习必备篇之：卡墙 | 缺心眼的慧小猪">
+    <meta name="twitter:title" content="Introduction to Computer Science | 缺心眼的慧小猪">
     <meta name="twitter:description" content="一名准ThoughtWorker。"">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="TW实习必备篇之：卡墙 | 缺心眼的慧小猪">
+    <meta property="og:title" content="Introduction to Computer Science | 缺心眼的慧小猪">
     <meta property="og:description" content="一名准ThoughtWorker。"">
 
   
@@ -38,7 +38,7 @@
     <meta name="generator" content="hexo" />
     
     
-    <link rel="canonical" href="http://yoursite.com/2015/03/15/实习见闻/" />
+    <link rel="canonical" href="http://yoursite.com/2016/02/24/Introduction-to-Computer-Science/" />
 
     
     <link rel="author" href="https://www.google.com" />
@@ -139,34 +139,23 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2015-03-15T08:49:44.000Z" class="post-list__meta--date date">2015-03-15</time> &#8226; <span class="post-meta__tags tags">于&nbsp;</span>
+      <time datetime="2016-02-24T04:56:21.000Z" class="post-list__meta--date date">2016-02-24</time> &#8226; <span class="post-meta__tags tags">于&nbsp;</span>
       <!--<span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>-->
     </div>
-    <h1 class="post-title">TW实习必备篇之：卡墙</h1>
+    <h1 class="post-title">Introduction to Computer Science</h1>
   </header>
 
   <section class="post">
-    <p>时隔几个月后，又听到大胡子老师的课了。<br><a id="more"></a></p>
-<p>第一次到公司，就被随处可见的大白板震惊到了，其上有红，黄，蓝等各色的便利贴，格外吸引眼球。<br>几个月后，当我从老师们的讲解中听闻到敏捷开发，以及敏捷开发的各种工具，我再也不能也不想忽略它们的存在。</p>
-<p>其实白板就是我们的物理卡墙，日常工作中可以辅助到我们的还有电子卡墙，诸如Trello, Mingles等。</p>
-<p>为什么要使用卡墙呢？我的理解是在软件开发的过程中，我们需要一个可视化的工具帮助我们了解团队其他成员以及开发工作的进展，及时沟通以便全局优化，消除浪费。</p>
-<p>###卡墙必备之User Story</p>
-<p>####一、User Story的INVEST原则：</p>
+    <p>最近一直在做devOps的工作,作为一个非科班出生的程序员,不得不从最基础的知识开始了解,我觉得这样才够踏实.今天对最近的学习做一些总结,希望对大家有所帮助。  </p>
+<p>###计算机: 辅助人类的好工具</p>
+<p>####操作系统  </p>
+<p>操作系统其实是一组程序,这组程序的重点在于管理计算机的所有活动以及驱动系统中的所有硬件.</p>
 <ol>
-<li>Independent(独立性)：每个User Story需要功能完整且相对于另一个User Story尽可能是功能独立的部分。</li>
-<li>Negotiable(可协商的)：一个User Story是便于沟通的。它包含故事详情的简短描述。这些详情是通过讨论阶段来完成的。一张还有很多详情的卡片实际上减少了和客户的会谈。</li>
-<li>Valuable(有价值的)： 每个User Story需对用户有价值。</li>
-<li>Estimable(可估量的)：开发者需要去估计一个User Story以便确定有限级并对故事进行规划</li>
-<li>Small(短小的)：一个好的故事应该在工作量上短小，描述具有代表性，而且不超过2-3人周的工作量。超过这个范围的用户故事，将会在划分范围和估计时出现很多错误。</li>
-<li>Testable(可测试的)：一个User Story是可测试的以便用于确认完成，记住我们不开发不能测试的故事。</li>
+<li>操作系统的内核层直接参考硬件规格写成,所有同一个操作系统程序不能够在不一样的硬件架构下运行.举例来说,个人计算机版的Windows XP不能直接在RISC架构的计算机下运行.因此再次<br>联想为什么Windows又要分为32位和64位的版本了呢?原因也是因为<a id="more"></a>
+32/64位的CPU指令集不太相同,要设计不同的操作系统匹配不同的硬件架构.  </li>
+<li>操作系统只是在管理整个硬件资源,包括CPU,内存,输入输出设备及系统文件.如果没有其他的应用程序辅助,它也只能使计算机主机准备妥当而已.  </li>
+<li>应用程序的开发都是参考操作系统提供的开发接口,所以该应用程序只能在该操作系统上面运行而已,不可以在其他操作系统上面运行.   </li>
 </ol>
-<p>####二、User Story的title尽量采用动词。</p>
-<p>###卡墙中的竖线给与我们很多警示：</p>
-<ol>
-<li>过线代表着角色的转变，当我们将Story从一栏移动到另一栏的时候，需要确定信息是否被正确传递。</li>
-<li>开发过程中时刻会发生身份的转变，一个团队应该是这样的：出了问题不能说你或者我的问题，而是整个团队的问题。全局优化大于局部优化。</li>
-</ol>
-<p>日常的开发工作中，需做到每天站会,codereview,以及一个迭代周期的Retro.</p>
 
   </section>
 
@@ -175,7 +164,7 @@
 
 <section class="post-comments">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="http://yoursite.com/2015/03/15/实习见闻/" data-title="TW实习必备篇之：卡墙" data-url="http://yoursite.com/2015/03/15/实习见闻/"></div>
+  <div class="ds-thread" data-thread-key="http://yoursite.com/2016/02/24/Introduction-to-Computer-Science/" data-title="Introduction to Computer Science" data-url="http://yoursite.com/2016/02/24/Introduction-to-Computer-Science/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">
