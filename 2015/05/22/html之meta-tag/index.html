@@ -179,9 +179,11 @@
 <p>特效有两种：blendTrans和revealTrans</p>
 <ul>
 <li>content=”blendTrans(Duration=3.0)” 设定换页特效为【淡入淡出】。Duration=value是设定特效持续的时间（秒），过短过长都不好，太短看不出来，太长浪费浏览时间，建议在3-5秒，即 3.0 &lt; value &lt; 5.0。</li>
-<li>content=”revealTrans(Transition=20)” 设定24种换页特效方式。Transition=value中的value可以是0-23。revealTrans可设定时间，如：content=”revealTrans(Transition=20 Duration=3.0)”c</li>
+<li>content=”revealTrans(Transition=20)” 设定24种换页特效方式。Transition=value中的value可以是0-23。revealTrans可设定时间，如：content=”revealTrans(Transition=20 Duration=3.0)”c<h4 id="10-换页特效"><a href="#10-换页特效" class="headerlink" title="10.换页特效"></a>10.换页特效</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"Robots"</span> contect=<span class="string">"all|none|index|noindex|follow|nofollow"</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </blockquote>
+<p>默认是all<br>其中的属性说明如下：<br>设定为all：文件将被检索，且页面上的链接可以被查询；<br>设定为none：文件将不被检索，且页面上的链接不可以被查询；<br>设定为index：文件将被检索；<br>设定为follow：页面上的链接可以被查询；<br>设定为noindex：文件将不被检索，但页面上的链接可以被查询；<br>设定为nofollow：文件将不被检索，页面上的链接可以被查询。 </p>
 </li>
 </ul>
 
