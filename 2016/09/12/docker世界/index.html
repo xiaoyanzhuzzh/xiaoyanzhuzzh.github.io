@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>缺心眼的慧小猪 | 没有人是天才,我们都需要恰到好处的练习，望一同共勉.</title>
+    <title>docker世界 | 缺心眼的慧小猪</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="一名准ThoughtWorker。">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="缺心眼的慧小猪 | 没有人是天才,我们都需要恰到好处的练习，望一同共勉.">
+    <meta name="twitter:title" content="docker世界 | 缺心眼的慧小猪">
     <meta name="twitter:description" content="一名准ThoughtWorker。"">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="缺心眼的慧小猪 | 没有人是天才,我们都需要恰到好处的练习，望一同共勉.">
+    <meta property="og:title" content="docker世界 | 缺心眼的慧小猪">
     <meta property="og:description" content="一名准ThoughtWorker。"">
 
   
@@ -38,7 +38,7 @@
     <meta name="generator" content="hexo" />
     
     
-    <link rel="canonical" href="http://yoursite.com" />
+    <link rel="canonical" href="http://yoursite.com/2016/09/12/docker世界/" />
 
     
     <link rel="author" href="https://www.google.com" />
@@ -135,45 +135,52 @@
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
-            <div class="main-post-list">
-    
-  <ol class="post-list">
-  
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2016/09/12/docker世界/" title="link to post.title">docker世界</a></h2>
-      <p class="excerpt">
-    
-      DockerInstall Docker for MacStep 1. Install and Run Docker for Mac1. Double-click Docker.dmg to open the installer, then drag Moby the whale to Application folder
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2016-09-12T08:24:39.000Z" class="post-list__meta--date date">2016-09-12</time> &#8226; <span class="post-meta__tags tags">于&nbsp;</span>
+      <!--<span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>-->
+    </div>
+    <h1 class="post-title">docker世界</h1>
+  </header>
+
+  <section class="post">
+    <h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><h4 id="Install-Docker-for-Mac"><a href="#Install-Docker-for-Mac" class="headerlink" title="Install Docker for Mac"></a><a href="https://docs.docker.com/docker-for-mac/" target="_blank" rel="external">Install Docker for Mac</a></h4><h5 id="Step-1-Install-and-Run-Docker-for-Mac"><a href="#Step-1-Install-and-Run-Docker-for-Mac" class="headerlink" title="Step 1. Install and Run Docker for Mac"></a>Step 1. Install and Run Docker for Mac</h5><pre><code>1. Double-click Docker.dmg to open the installer, then drag Moby the whale to Application folder
 2. Double-click Docker.app to start Docker
-3. Click the whale to get Preferences, and o
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2016-09-12T08:24:39.000Z" class="post-list__meta--date date">2016-09-12</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2016/09/12/docker世界/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-  
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2016/02/24/Introduction-to-Computer-Science/" title="link to post.title">Introduction to Computer Science</a></h2>
-      <p class="excerpt">
-    
-      最近一直在做devOps的工作,作为一个非科班出生的程序员,不得不从最基础的知识开始了解,我觉得这样才够踏实.今天对最近的学习做一些总结,希望对大家有所帮助。  
-计算机: 辅助人类的好工具操作系统操作系统其实是一组程序,这组程序的重点在于管理计算机的所有活动以及驱动系统中的所有硬件.
+3. Click the whale to get Preferences, and other options
+4. Select About Docker to verify that you have the latest version.
+</code></pre><p>Congratulations! You are up and running with Docker for Mac.</p>
+<h5 id="Step-2-Check-versions-of-Docker-Engine-Compose-and-Machine"><a href="#Step-2-Check-versions-of-Docker-Engine-Compose-and-Machine" class="headerlink" title="Step 2. Check versions of Docker Engine, Compose, and Machine"></a>Step 2. Check versions of Docker Engine, Compose, and Machine</h5><pre><code>Run these commands to test if your versions of docker, docker-compose, and docker-machine 
+are up-to-date and compatible with Docker.app.
+</code></pre><h5 id="Step-3-Explore-the-application-and-run-examples"><a href="#Step-3-Explore-the-application-and-run-examples" class="headerlink" title="Step 3. Explore the application and run examples"></a>Step 3. Explore the application and run examples</h5><pre><code>1. Open a command-line terminal, and run some Docker commands to verify that Docker is working as expected. 
+Some good commands to try are docker version to check that you have the latest 
+release installed, and docker ps and docker run hello-world to verify that Docker is running.
+</code></pre><h3 id="Docker-Machine"><a href="#Docker-Machine" class="headerlink" title="Docker Machine"></a>Docker Machine</h3><h3 id="Docker-Compose"><a href="#Docker-Compose" class="headerlink" title="Docker Compose"></a>Docker Compose</h3><pre><code>Compose is a tool for defining and running multi-container Docker applications. To learn more about Compose refer to the following documentation:
+</code></pre>
+  </section>
 
-操作系统的内核层直接参考硬件规格写成,所有同一个操作系统程序不能够在不一样的硬件架构下运行.举例来说,个人计算机版的Windows XP不能直接在RISC架构的计算机下运行.因此再次联想为什么Windows又要分为32位和64位的版本了呢?原因也是因为
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2016-02-24T04:56:21.000Z" class="post-list__meta--date date">2016-02-24</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2016/02/24/Introduction-to-Computer-Science/">继续阅读</a></div>
-      <hr class="post-list__divider" />
-    </li>
-  
-    
-  </ol>
+</article>
 
 
-
-</div>
+<section class="post-comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="http://yoursite.com/2016/09/12/docker世界/" data-title="docker世界" data-url="http://yoursite.com/2016/09/12/docker世界/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"mlongbo"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+</section>
 
 
 
