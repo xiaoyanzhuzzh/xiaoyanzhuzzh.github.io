@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Introduction to Computer Science | 缺心眼的慧小猪</title>
+    <title>Web Accessibility | 缺心眼的慧小猪</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="一名准ThoughtWorker。">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Introduction to Computer Science | 缺心眼的慧小猪">
+    <meta name="twitter:title" content="Web Accessibility | 缺心眼的慧小猪">
     <meta name="twitter:description" content="一名准ThoughtWorker。"">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Introduction to Computer Science | 缺心眼的慧小猪">
+    <meta property="og:title" content="Web Accessibility | 缺心眼的慧小猪">
     <meta property="og:description" content="一名准ThoughtWorker。"">
 
   
@@ -38,7 +38,7 @@
     <meta name="generator" content="hexo" />
     
     
-    <link rel="canonical" href="http://yoursite.com/2016/02/24/Introduction-to-Computer-Science/" />
+    <link rel="canonical" href="http://yoursite.com/2018/01/04/Web-Accessibility/" />
 
     
     <link rel="author" href="https://www.google.com" />
@@ -139,24 +139,34 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2016-02-24T04:56:21.000Z" class="post-list__meta--date date">2016-02-24</time> &#8226; <span class="post-meta__tags tags">于&nbsp;</span>
+      <time datetime="2018-01-04T09:28:04.000Z" class="post-list__meta--date date">2018-01-04</time> &#8226; <span class="post-meta__tags tags">于&nbsp;</span>
       <!--<span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>-->
     </div>
-    <h1 class="post-title">Introduction to Computer Science</h1>
+    <h1 class="post-title">Web Accessibility</h1>
   </header>
 
   <section class="post">
-    <p>最近一直在做devOps的工作,作为一个非科班出生的程序员,不得不从最基础的知识开始了解,我觉得这样才够踏实.今天对最近的学习做一些总结,希望对大家有所帮助。  </p>
-<h3 id="计算机-辅助人类的好工具"><a href="#计算机-辅助人类的好工具" class="headerlink" title="计算机: 辅助人类的好工具"></a>计算机: 辅助人类的好工具</h3><h4 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h4><p>操作系统其实是一组程序,这组程序的重点在于管理计算机的所有活动以及驱动系统中的所有硬件.</p>
+    <p>前段日子在公司组织的前端社区活动中分享了关于 Web Accessibility 的内容. 首先介绍一下 Web Accessibility 相关的一些词汇:  </p>
 <ol>
-<li>操作系统的内核层直接参考硬件规格写成,所有同一个操作系统程序不能够在不一样的硬件架构下运行.举例来说,个人计算机版的Windows XP不能直接在RISC架构的计算机下运行.因此再次联想为什么Windows又要分为32位和64位的版本了呢?原因也是因为<a id="more"></a>
-32/64位的CPU指令集不太相同,要设计不同的操作系统匹配不同的硬件架构.  </li>
-<li>操作系统只是在管理整个硬件资源,包括CPU,内存,输入输出设备及系统文件.如果没有其他的应用程序辅助,它也只能使计算机主机准备妥当而已.  </li>
-<li>应用程序的开发都是参考操作系统提供的开发接口,所以该应用程序只能在该操作系统上面运行而已,不可以在其他操作系统上面运行. </li>
-<li>内核功能:<h4 id="1-系统调用接口"><a href="#1-系统调用接口" class="headerlink" title="1. 系统调用接口"></a>1. 系统调用接口</h4><h4 id="2-程序管理"><a href="#2-程序管理" class="headerlink" title="2. 程序管理"></a>2. 程序管理</h4>我们可能听过所谓的’多任务环境’吧?一部计算机可能同时间有很多的工作在等到CPU运算处理,内核这个时候必须要能够控制这些工作,让CPU的资源有效的分配工作.<h4 id="3-内存管理"><a href="#3-内存管理" class="headerlink" title="3. 内存管理"></a>3. 内存管理</h4>控制整个系统的内存管理,这个内存控制是非常重要的,因为系统所有的程序代码与数据都必须先存放在内存当中.<h4 id="4-文件系统管理"><a href="#4-文件系统管理" class="headerlink" title="4. 文件系统管理"></a>4. 文件系统管理</h4><h4 id="5-设备驱动"><a href="#5-设备驱动" class="headerlink" title="5. 设备驱动"></a>5. 设备驱动</h4>设备的驱动程序就是内核需要做的事情,</li>
-<li>操作系统和驱动程序<br>为了解决操作系统该如何驱动应用程序的问题,操作系统通常会提供一个开发接口给硬件开发商,让他们可以根据这个接口设计可以驱动他们硬件的驱动程序,如此一来.只要安装驱动程序后,自然就可以在他们的操作系统上驱动这块显卡了.<br>举例来说,我们一般购买的显卡,都会附有一张光盘,让我们可以进入操作系统之后进行驱动程序的安装.</li>
+<li>W3C: World Wide Web Consortium  </li>
+<li>WAI: Web Accessibility Initiate  </li>
+<li>A11Y: Accessibility 的简写  </li>
 </ol>
-
+<h2 id="信息无障碍"><a href="#信息无障碍" class="headerlink" title="信息无障碍"></a>信息无障碍</h2><p>“信息无障碍”起源于西方国家, 译为 Accessibility. 它是指任何人（注意是任何人，无论是健全人还是残疾人，无论是年轻人还是老年人等等）在任何情况下都能平等的、方便地感知，理解，浏览，和 Web 互动，同时他们也可以为Web做出贡献.</p>
+<p>当 Tim Berners-Lee 发明万维网时, 他的美好愿景是 Web for All，这意味着让所有人都能对 Web 加以利用，不论文化教育背景、能力、财力以及身体残疾.   </p>
+<p>在信息技术高速发展的今天，很多人没有网络都觉得没法生存，但是在这个星球上，数以亿计的人是被信息技术远远抛下的群体。他们是失明失聪的残障人士，或者是贫困农村的失学儿童，又或者是不会使用互联网的老年人。这就是所谓的信息障碍。信息无障碍是愿景，而信息障碍是需要面对的问题。</p>
+<p>其实我们现在的生活中有很多实践都属于”信息无障碍”的范畴, 比如</p>
+<ul>
+<li><p>键盘上的F和J的凸起基准键, 它的作用就是方便任何人可以精准的找到键盘字母的位置，从而可以在不看键盘的情况下，快速的打字，俗称“盲打”，大家都知道它的含义，没有人会把这个词理解为“盲人打字”吧.<br><img src="/images/keyboard.jpg" alt="键盘的凸起基准键" title="凸起基准键"></p>
+</li>
+<li><p>包含多种类型字幕的YouTube视频，可以方便让视障人士和听障人士获取视频中的信息.</p>
+</li>
+<li>iOS通用性的平台应用，如VoiceOver, FaceTime以及Siri</li>
+</ul>
+<h2 id="WCAG-标准"><a href="#WCAG-标准" class="headerlink" title="WCAG 标准"></a>WCAG 标准</h2><p>Tim Berners-Lee 1997年在 W3C 内部成立了 WAI（Web Accessibility Initiative），负责开发 Web 无障碍相关标准，该组织在 1999 年完成了 Web内容无障碍指南 1.0（Web Content Accessibility Guidelines 1.0，WCAG 1.0）的开发，其后在2008年重新制定了 WCAG 2.0，虽然 WCAG 以及 2.0 这个版本的制定主要针对 Web 内容，但它也确定了信息无障碍的四个基本原则：可感知性、可操作性、可理解性、鲁棒性，以及信息障碍可能覆盖的几类残障人群.<br>在近二十年的时间里 WAI 围绕着 WCAG 开发了一系列相关规范，涉及用户代理、开发工具，以及语义标签。</p>
+<p>美国1973年建立了《康复法案》，所有政府资助的项目，禁止对于残障人士的就业歧视。2000年前后，《康复法案》完善了补充法规 – Section 508，除了节选当时的 WCAG 1.0（Web Content Accessibility Guidelines 1.0）以外，也对其它信息产品（Electronic and Information Technology）进行了无障碍实施定义，包括数字文档、闭路产品、沟通技术等，法规的建立进一步规范了美国国内的无障碍技术依据.</p>
+<p>总之, Web 是一个在生活的许多方面日益重要的资源：教育，就业，政府，商业，保健，娱乐等。所以为了为残障人士提供平等的访问和机会，Web 的可达性非常重要。一个可访问的 Web 也帮助残障人士更有效地参与社会。<br>Web 为许多残障人士提供了前所未有的信息互动访问的可能性。也就是说，通过 Web 技术，显示，声音和可使媒体的访问屏障可以更容易的被克服。<br>另外，Web Accessibility 有时也是被法律和政治所要求的。（美国，澳大利亚，爱尔兰，英国都颁布了相应的法律）</p>
+<h2 id="常见问题及开发流程"><a href="#常见问题及开发流程" class="headerlink" title="常见问题及开发流程"></a>常见问题及开发流程</h2>
   </section>
 
 </article>
@@ -164,7 +174,7 @@
 
 <section class="post-comments">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="http://yoursite.com/2016/02/24/Introduction-to-Computer-Science/" data-title="Introduction to Computer Science" data-url="http://yoursite.com/2016/02/24/Introduction-to-Computer-Science/"></div>
+  <div class="ds-thread" data-thread-key="http://yoursite.com/2018/01/04/Web-Accessibility/" data-title="Web Accessibility" data-url="http://yoursite.com/2018/01/04/Web-Accessibility/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">
