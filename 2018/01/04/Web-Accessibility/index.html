@@ -166,7 +166,43 @@
 <h2 id="WCAG-标准"><a href="#WCAG-标准" class="headerlink" title="WCAG 标准"></a>WCAG 标准</h2><p>Tim Berners-Lee 1997年在 W3C 内部成立了 WAI（Web Accessibility Initiative），负责开发 Web 无障碍相关标准，该组织在 1999 年完成了 Web内容无障碍指南 1.0（Web Content Accessibility Guidelines 1.0，WCAG 1.0）的开发，其后在2008年重新制定了 WCAG 2.0，虽然 WCAG 以及 2.0 这个版本的制定主要针对 Web 内容，但它也确定了信息无障碍的四个基本原则：可感知性、可操作性、可理解性、鲁棒性，以及信息障碍可能覆盖的几类残障人群.<br>在近二十年的时间里 WAI 围绕着 WCAG 开发了一系列相关规范，涉及用户代理、开发工具，以及语义标签。</p>
 <p>美国1973年建立了《康复法案》，所有政府资助的项目，禁止对于残障人士的就业歧视。2000年前后，《康复法案》完善了补充法规 – Section 508，除了节选当时的 WCAG 1.0（Web Content Accessibility Guidelines 1.0）以外，也对其它信息产品（Electronic and Information Technology）进行了无障碍实施定义，包括数字文档、闭路产品、沟通技术等，法规的建立进一步规范了美国国内的无障碍技术依据.</p>
 <p>总之, Web 是一个在生活的许多方面日益重要的资源：教育，就业，政府，商业，保健，娱乐等。所以为了为残障人士提供平等的访问和机会，Web 的可达性非常重要。一个可访问的 Web 也帮助残障人士更有效地参与社会。<br>Web 为许多残障人士提供了前所未有的信息互动访问的可能性。也就是说，通过 Web 技术，显示，声音和可使媒体的访问屏障可以更容易的被克服。<br>另外，Web Accessibility 有时也是被法律和政治所要求的。（美国，澳大利亚，爱尔兰，英国都颁布了相应的法律）</p>
-<h2 id="常见问题及开发流程"><a href="#常见问题及开发流程" class="headerlink" title="常见问题及开发流程"></a>常见问题及开发流程</h2>
+<h2 id="常见问题及开发流程"><a href="#常见问题及开发流程" class="headerlink" title="常见问题及开发流程"></a>常见问题及开发流程</h2><h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li>页面是否有标题</li>
+<li>页面语言问题</li>
+<li>IMAGE显示问题</li>
+<li>高对比度显示模式下常见问题</li>
+</ul>
+<h3 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h3><ul>
+<li>静态检测, 通常由开发人员在单元测试时进行，检查 HTML 页面中不满足 CI162 所对应列表的项. (<a href="https://open-indy.github.io/Koa11y/" target="_blank" rel="external">https://open-indy.github.io/Koa11y/</a>)</li>
+<li>键盘支持, 要求所有能通过鼠标完成的操作用键盘都能达到同样的效果.</li>
+<li>高对比度的支持: 在高对比度模式下, 屏幕只有黑白两色, 要保证 Web 应用在这种模式下不丢失信息. Design Mock-ups</li>
+<li>读屏软件的支持, 通常由测试人员完成. 测试人员模拟盲人使用读屏软件, 要保证页面上的内容基本都能为读屏软件所识别, 并且能完成各种操作.</li>
+</ul>
+<h3 id="具体实践"><a href="#具体实践" class="headerlink" title="具体实践"></a>具体实践</h3><ul>
+<li><p>页面头部必须包含的内容</p>
+<ol>
+<li>HTML 页面中加入 DTD 声明及默认语言属性</li>
+<li>XML 页面中加入 DTD 声明及默认语言属性</li>
+<li>设置 title 属性</li>
+</ol>
+</li>
+<li><p>关于 Image</p>
+<ol>
+<li>具有意义的 Image，一定要提供 Alt 属性</li>
+<li>装饰性的 Image，不提供 Alt 属性</li>
+<li>无需重复设置 alt 的 Image，以避免引起不必要的混乱</li>
+<li>高对比度模式下的图片显示问题</li>
+</ol>
+</li>
+<li><p>关于高对比度显示模式下常见问题的解决方案</p>
+<ol>
+<li>改用前景图方式，采用 <img> 标签的 src 属性指定前景图片，并设置 alt 属性，代替 CSS 的 background，避免用背景图片显示方式。尤其是对功能性的按钮、链接的处理</li>
+<li>利用 jQuery(JS), 探测浏览器是否处于高对比状态来进行不同的输出。如：对高对比度模式下，使用文字来代替背景图片，保证信息的完整度</li>
+<li>前景色与背景色的亮度比例，避免太接近。通常来说 5:1 是可以接受的. WCAG的1.4.3中提到: 对比度（最小）：文本视觉呈现和文本图像至少要有4.5：1的对比度</li>
+</ol>
+</li>
+</ul>
+
   </section>
 
 </article>
