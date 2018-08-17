@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>AWS 实战(1) | 缺心眼的慧小猪</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="一名准ThoughtWorker。">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="AWS 实战(1) | 缺心眼的慧小猪">
+    <meta name="twitter:description" content="一名准ThoughtWorker。"">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AWS 实战(1) | 缺心眼的慧小猪">
+    <meta property="og:description" content="一名准ThoughtWorker。"">
+
+  
+    <meta name="author" content="Sofia ZHANG">
+  
+    <link rel="stylesheet" type="text/css" href="/css/vno.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/tomorrow.css">
+    <!-- <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  -->
+
+
+    
+
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <meta name="generator" content="hexo" />
+    
+    
+    <link rel="canonical" href="http://yoursite.com/2018/08/14/AWS实战（1）/" />
+
+    
+    <link rel="author" href="https://www.google.com" />
+    
+</head>
+<body class="home-template no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url()">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 缺心眼的慧小猪 的主页"><img src="/images/logo.jpg" width="80" alt="缺心眼的慧小猪 logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for 缺心眼的慧小猪">缺心眼的慧小猪</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">没有人是天才,我们都需要恰到好处的练习，望一同共勉.</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">帮助自己，帮助他人。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/projects">项目作品</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/xiaoyanzhuzzh" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+  <!-- Google Plus -->
+  
+  <li class="navigation__item">
+    <a href="https://www.google.com" title="Google+" target="_blank">
+      <i class='social fa fa-google-plus-square'></i>
+      <span class="label">Google+</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com" title="上Twitter找我" target="_blank">
+      <i class='social fa fa-twitter'></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-08-14T07:16:06.000Z" class="post-list__meta--date date">2018-08-14</time> &#8226; <span class="post-meta__tags tags">于&nbsp;</span>
+      <!--<span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>-->
+    </div>
+    <h1 class="post-title">AWS 实战(1)</h1>
+  </header>
+
+  <section class="post">
+    <p>本期 AWS 实战主要介绍以下内容:</p>
+<ol>
+<li>AWS IAM (Identity and Access Management) &amp; MFA (Multi-Factor Authentication)</li>
+<li>AWS S3 (Simple Storage Service)</li>
+</ol>
+<p>在介绍之前，首先让我们了解（思考）下面的问题：</p>
+<ol>
+<li><strong>什么是 AWS?</strong><br>AWS 是亚马逊公司旗下云计算服务平台，面向用户提供包括弹性计算、存储、数据库、应用程序在内的一整套云计算服务，帮助企业降低IT投入成本和维护成本。</li>
+<li><strong>为什么要用 AWS？</strong><br>很多人的答案可能是我们所服务的客户要用 AWS，那么其实再深入的思考下去，客户使用 AWS 无非是因为 AWS 的以下诸多优点：<ul>
+<li>能满足并且实现绝大多数的业务需求: AWS 提供可靠的，基于云的解决方案，以帮助您满足业务需求。</li>
+<li>成本低: 节省了我们自己去搭建机房以及服务器的过程，同时 AWS 是基于按使用量收费的，节约 Money。</li>
+<li>风险小: AWS 有着遍布全球的 HA (High Availability) 保证, 而且 AWS 整个生态系统非常全面可靠。</li>
+</ul>
+</li>
+</ol>
+<hr>
+
+<h3 id="IAM-Identity-and-Access-Management"><a href="#IAM-Identity-and-Access-Management" class="headerlink" title="IAM (Identity and Access Management)"></a>IAM (Identity and Access Management)</h3><p>IAM 使您能够安全地管理对 AWS 服务和资源的访问。<br>为什么从 IAM 讲起，是因为 IAM 是用户可以访问所有资源的起点。</p>
+<ol>
+<li>可以使用 IAM 创建和管理 AWS 用户(Users) 和组(Groups)，并使用各种权限来允许或拒绝他们对 AWS 资源的访问。</li>
+<li>IAM 是 AWS 账户提供的一项功能，不另外收费。</li>
+</ol>
+<p>那么提到 IAM，其实必须要提及一下 MFA (Multi-Factor Authentication), 它可以在用户名称和密码之外再额外增加一层保护。启用 MFA 后，登录 AWS 网站的时候，系统将要求他们输入用户名和密码(第一安全要素 – 用户已知)，以及来自其 AWS MFA 设备的身份验证代码(第二安全要素 – 用户已有)，从而对 AWS 账户设置和资源提供更高的安全保护。</p>
+<h4 id="如何-Enable-a-Virtual-MFA-Device-for-an-IAM-User-Console"><a href="#如何-Enable-a-Virtual-MFA-Device-for-an-IAM-User-Console" class="headerlink" title="如何 Enable a Virtual MFA Device for an IAM User (Console)?"></a>如何 Enable a Virtual MFA Device for an IAM User (Console)?</h4><p>看这里: <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-iam-user" target="_blank" rel="external">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-iam-user</a> </p>
+<p>自己私下联系的时候可以尝试这两个例子：<br><strong>例1：使用 IAM 创建 一个 AWS 用户(Users)，管理该用户及其访问权限，并对该用户使用 MFA。</strong><br><strong>例2：使用 IAM 创建一个 AWS 角色 (Role)，并且管理其权限。</strong></p>
+<p>看完上面的例子，我们可能要思考这个问题：<strong>IAM 中 Groups, Users, Roles 的区别是什么?</strong></p>
+<ul>
+<li><p>AWS User 是一个能被 AWS 服务和应用程序识别的独一无二的身份, 它拥有永久性长期凭证 (permanent long-term credentials) 并且可以直接跟 AWS 服务交互。</p>
+</li>
+<li><p>AWS Group 是多位 IAM User 的 集合 (A group is a collection of IAM users)。IAM Group主要是为了方便管理一组 IAM 用户的同一组权限。  </p>
+</li>
+<li><p>AWS Role 是 IAM 实体，它可以为提交 AWS 服务请求定义一组权限。英文可能更好理解一点儿 (An IAM role is an IAM entity that defines a set of permissions for making AWS service requests, IAM roles allow you to delegate access with defined permissions to trusted entities without having to share long-term access keys. IAM roles cannot make direct requests to AWS services. they are meant to be assumed by authorized entities, such as IAM users, applications, or AWS services such as EC2. Use IAM roles to delegate access within or between AWS accounts.</p>
+</li>
+</ul>
+<hr>
+
+<h3 id="S3-Simple-Storage-Service"><a href="#S3-Simple-Storage-Service" class="headerlink" title="S3 (Simple Storage Service)"></a>S3 (Simple Storage Service)</h3><p>从它的名字可以猜到这个服务是有关存储的，它其实是专为从任意位置存储和检索任意数量的数据而构建的对象存储服务。这些数据可以是任意类型，来源于任意位置。S3的特点：</p>
+<ul>
+<li>S3 旨在提供 99.999999999% 的持久性, 可存储每个行业数百万个应用程序数据。</li>
+<li>S3 提供了全面的安全性和合规性功能，甚至可满足最严格的法规要求。用户可以灵活的管理数据，以实现成本优化，访问控制和合规性。</li>
+<li>S3 提供实时查询功能，可以在S3对静态数据进行强大的分析。</li>
+<li>S3 是最受支持的云存储服务。</li>
+</ul>
+<p>总之S3在存储方面有着很大的优势, 可以使用 S3 做一下事情：</p>
+<ul>
+<li>备份和恢复</li>
+<li>数据存档</li>
+<li>datalake 和大数据分析</li>
+<li>灾难恢复（跨地区复制（CRR））</li>
+<li>host static websites</li>
+</ul>
+<p>下面是 S3 常用到的命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aws s3 ls s3://zhang.trainee // &#26597;&#30475;zhang.trainee&#36825;&#20010;bucket&#10;aws s3 rb s3://zhang.trainee --force // &#21024;&#38500; zhang.trainee&#36825;&#20010;bucket&#10;&#10;aws s3 mb s3://zhang.trainee // &#26032;&#24314;&#19968;&#20010;&#21483;&#20570;zhang.trainee&#30340;bucket&#10;aws s3 cp local.file s3://zhang.trainee // &#23558;&#26412;&#22320;&#25991;&#20214;&#25335;&#36125;&#21040;hang.trainee&#36825;&#20010;bucket&#19978;</span><br></pre></td></tr></table></figure></p>
+<p>以下是一个使用 S3 作为 datalake 的案例：<br><img src="/images/s3-datalake.jpeg" alt="大数据参考架构实例" title="大数据参考架构实例"></p>
+<p><hr></p>
+<h4 id="AWS-TOP-10-AWS-IAM-BEST-PRACTICES"><a href="#AWS-TOP-10-AWS-IAM-BEST-PRACTICES" class="headerlink" title="AWS TOP 10 AWS IAM BEST PRACTICES"></a>AWS TOP 10 AWS IAM BEST PRACTICES</h4><p>(<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials" target="_blank" rel="external">https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials</a>)   </p>
+<ul>
+<li>Lock Away Your AWS Account Root User Access Keys</li>
+<li>Create Individual IAM Users<br>  不要使用 AWS root user 访问 AWS, 而是给需要访问 AWS 的用户创建一个独立的 AWS User, 其次给与这个 User 必要的权限。</li>
+<li>Use Groups to Assign Permissions to IAM Users </li>
+<li>Use AWS-Defined Policies to Assign Permissions Whenever Possible</li>
+<li>Grant Least Privilege</li>
+<li>Use Access Levels to Review IAM Permissions</li>
+<li>Configure a Strong Password Policy for Your Users</li>
+<li>Enable MFA for Privileged Users</li>
+<li>Use Roles for Applications That Run on Amazon EC2 Instances</li>
+<li>Use Roles to Delegate Permissions</li>
+<li>Do Not Share Access Keys</li>
+<li>Rotate Credentials Regularly</li>
+<li>Remove Unnecessary Credentials</li>
+<li>Use Policy Conditions for Extra Security</li>
+<li>Monitor Activity in Your AWS Account</li>
+</ul>
+
+  </section>
+
+</article>
+
+
+<section class="post-comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="http://yoursite.com/2018/08/14/AWS实战（1）/" data-title="AWS 实战(1)" data-url="http://yoursite.com/2018/08/14/AWS实战（1）/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"mlongbo"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+
+
+              <footer class="footer">
+	   <span class="footer__copyright"> 欢迎大家访问我的 <a href="https://github.com/xiaoyanzhuzzh" rel="author">GitHub</a></span>
+</footer>
+        </div>
+    </div>
+    
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="/js/main.js"></script>
+
+    <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+</body>
+</html>
