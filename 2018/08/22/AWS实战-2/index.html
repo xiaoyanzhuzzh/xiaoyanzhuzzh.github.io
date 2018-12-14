@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Jaden慧小zhi | 没有人是天才,我们都需要恰到好处的练习，望一同共勉.</title>
+    <title>AWS实战(2) | Jaden慧小zhi</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="一名准ThoughtWorker。">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Jaden慧小zhi | 没有人是天才,我们都需要恰到好处的练习，望一同共勉.">
+    <meta name="twitter:title" content="AWS实战(2) | Jaden慧小zhi">
     <meta name="twitter:description" content="一名准ThoughtWorker。"">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Jaden慧小zhi | 没有人是天才,我们都需要恰到好处的练习，望一同共勉.">
+    <meta property="og:title" content="AWS实战(2) | Jaden慧小zhi">
     <meta property="og:description" content="一名准ThoughtWorker。"">
 
   
@@ -38,7 +38,7 @@
     <meta name="generator" content="hexo" />
     
     
-    <link rel="canonical" href="http://yoursite.com" />
+    <link rel="canonical" href="http://yoursite.com/2018/08/22/AWS实战-2/" />
 
     
     <link rel="author" href="https://www.google.com" />
@@ -135,34 +135,65 @@
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
-            <div class="main-post-list">
-    
-  <ol class="post-list">
-  
-    
-    <li>
-      <h2 class="post-list__post-title post-title"><a href="/2018/01/04/Web-Accessibility/" title="link to post.title">Web Accessibility</a></h2>
-      <p class="excerpt">
-    
-      前段日子在公司组织的前端社区活动中分享了关于 Web Accessibility 的内容. 首先介绍一下 Web Accessibility 相关的一些词汇:  
+            <article class="post-container post-container--single">
 
-W3C: World Wide Web Consortium  
-WAI: Web Accessibility Initiate  
-A11Y: Accessibility 的简写  
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-08-22T07:35:48.000Z" class="post-list__meta--date date">2018-08-22</time> &#8226; <span class="post-meta__tags tags">于&nbsp;</span>
+      <!--<span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>-->
+    </div>
+    <h1 class="post-title">AWS实战(2)</h1>
+  </header>
 
-信息无障碍“信息无障碍”起源于西方国家, 译为 Accessibility. 它是指任何人（注意是任何人，无论是健全人还是残疾人，无论是年轻人还是
-    &hellip;
-      </p>
-      <div class="post-list__meta"><time datetime="2018-01-04T09:28:04.000Z" class="post-list__meta--date date">2018-01-04</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;</span><a class="btn-border-small" href="/2018/01/04/Web-Accessibility/">继续阅读</a></div>
-      <hr class="post-list__divider">
-    </li>
-  
-    
-  </ol>
+  <section class="post">
+    <p>本期AWS实战主要接受如何搭建 SERVERLESS 静态 WEB 应用。</p>
+<p>那么首先，让我们来了解什么是 SERVERLESS 和静态 WEB:</p>
+<ol>
+<li>SERVERLESS: </li>
+<li>静态 WEB:</li>
+</ol>
+<hr>
+
+<h3 id="1-一个页面从输入URL到页面加载完的过程中都发生了什么事情"><a href="#1-一个页面从输入URL到页面加载完的过程中都发生了什么事情" class="headerlink" title="1. 一个页面从输入URL到页面加载完的过程中都发生了什么事情"></a>1. <strong>一个页面从输入URL到页面加载完的过程中都发生了什么事情</strong></h3><ul>
+<li>DNS 域名解析</li>
+<li>建立 TCPIP 连接 —— 三次握手</li>
+<li>发起 HTTP GET 请求到服务器</li>
+<li>服务器处理请求并作出响应返回 HTTP Response</li>
+<li>浏览器拿到 Response 进行解析并渲染页面（DOM 解析, cssom 解析 (<a href="https://varvy.com/performance/cssom.html)" target="_blank" rel="noopener">https://varvy.com/performance/cssom.html)</a>, js 解析等）</li>
+<li>JS 解析这个过程中如果遇到需要请求外部资源 则跟上树一样发送http请求到相应浏览器</li>
+</ul>
+<h4 id="1-1-DNS-域名解析"><a href="#1-1-DNS-域名解析" class="headerlink" title="1.1 DNS 域名解析"></a><strong>1.1 DNS 域名解析</strong></h4><ul>
+<li>DNS: Domain Name System - 域名系统</li>
+<li><em>因特⽹上作为<strong>域名</strong>和 <strong>IP 地址</strong>相互映射的⼀一个分布式数据库，能够使用户更方便的访问互联⽹。通过主机名，最终得到改主机名对应的IP地址的过程叫做域名解析。</em></li>
+</ul>
+<p><img src="/images/dns.jpg" alt="DNS 解析" title="DNS 解析"><br>对上图的解释可以看这篇文章：<a href="https://www.verisign.com/en_US/website-presence/online/how-dns-works/index.xhtml" target="_blank" rel="noopener">https://www.verisign.com/en_US/website-presence/online/how-dns-works/index.xhtml</a></p>
+<ul>
+<li></li>
+</ul>
+
+  </section>
+
+</article>
 
 
-
-</div>
+<section class="post-comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="http://yoursite.com/2018/08/22/AWS实战-2/" data-title="AWS实战(2)" data-url="http://yoursite.com/2018/08/22/AWS实战-2/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"mlongbo"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+</section>
 
 
 

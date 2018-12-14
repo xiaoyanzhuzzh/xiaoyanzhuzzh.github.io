@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>spring cloud之eureka配置 | Jaden慧小zhi</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="一名准ThoughtWorker。">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="spring cloud之eureka配置 | Jaden慧小zhi">
+    <meta name="twitter:description" content="一名准ThoughtWorker。"">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="spring cloud之eureka配置 | Jaden慧小zhi">
+    <meta property="og:description" content="一名准ThoughtWorker。"">
+
+  
+    <meta name="author" content="Jaden ZHANG">
+  
+    <link rel="stylesheet" type="text/css" href="/css/vno.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/tomorrow.css">
+    <!-- <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  -->
+
+
+    
+
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <meta name="generator" content="hexo" />
+    
+    
+    <link rel="canonical" href="http://yoursite.com/2018/12/14/spring-cloud之eureka配置/" />
+
+    
+    <link rel="author" href="https://www.google.com" />
+    
+</head>
+<body class="home-template no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url()">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Jaden慧小zhi 的主页"><img src="/images/logo.jpg" width="80" alt="Jaden慧小zhi logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Jaden慧小zhi">Jaden慧小zhi</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">没有人是天才,我们都需要恰到好处的练习，望一同共勉.</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">帮助自己，帮助他人。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/projects">项目作品</a></li>
+            
+              <li class="navigation__item"><a href="/aboutme">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/xiaoyanzhuzzh" title="查看我的GitHub主页" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+  <!-- Google Plus -->
+  
+  <li class="navigation__item">
+    <a href="https://www.google.com" title="Google+" target="_blank">
+      <i class="social fa fa-google-plus-square"></i>
+      <span class="label">Google+</span>
+    </a>
+  </li>
+
+  
+<!-- Twitter -->
+
+  <li class="navigation__item">
+    <a href="https://twitter.com" title="上Twitter找我" target="_blank">
+      <i class="social fa fa-twitter"></i>
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-12-14T07:27:42.000Z" class="post-list__meta--date date">2018-12-14</time> &#8226; <span class="post-meta__tags tags">于&nbsp;</span>
+      <!--<span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>-->
+    </div>
+    <h1 class="post-title">spring cloud之eureka配置</h1>
+  </header>
+
+  <section class="post">
+    <p>最近参与到一个微服务拆分的项目中，这个项目中使用Eureka，Zuul。Eureka是Netflix提供的服务注册和发现组件。微服务通过Eureka进行注册，<br>服务调用方通过Eureka找到目标服务。Zuul是Netflix开源的一个API Gateway服务器, 本质上是一个web servlet应用。</p>
+<p>所有的微服务（通过配置Eureka服务信息）到Eureka服务器中进行注册，并定时发送心跳进行健康检查，Eureka默认配置是30秒发送一次心跳，<br>表明服务仍然处于存活状态，发送心跳的时间间隔可以通过Eureka的配置参数自行配置，Eureka服务器在接收到服务实例的最后一次心跳后，需要等待90秒（<br>默认配置90秒，可以通过配置参数进行修改）后，才认定服务已经死亡（即连续3次没有接收到心跳），在Eureka自我保护模式关闭的情况下会清除该服务的注册信息。<br>所谓的自我保护模式是指，出现网络分区、Eureka在短时间内丢失过多的服务时，会进入自我保护模式，即一个服务长时间没有发送心跳，Eureka也不会将其删除。自我保护模式默认为开启，可以通过配置参数将其设置为关闭状态。</p>
+<p>Eureka的配置主要有3个内容：</p>
+<ol>
+<li>Eureka服务端（server）</li>
+<li>Eureka客户端（client）</li>
+<li>Eureka实例（instance）</li>
+</ol>
+<h3 id="Eureka服务端（server）配置"><a href="#Eureka服务端（server）配置" class="headerlink" title="Eureka服务端（server）配置"></a>Eureka服务端（server）配置</h3><p><strong>1. 在pom.xml中追加相应的依赖支持库，我用的是spring-cloud-starter-netflix-eureka-server,如下：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-netflix-eureka-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>2. 修改加载配置文件，这里使用的是yml文件配置(application.yml)，在这个配置文件里面主要进行eureka服务的定义。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8099</span><br><span class="line">eureka:</span><br><span class="line">  server:</span><br><span class="line">    enableSelfPreservation: false</span><br><span class="line">  instance:</span><br><span class="line">    hostname: localhost</span><br><span class="line">  client:</span><br><span class="line">    register-with-eureka: false</span><br><span class="line">    fetch-registry: false</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span><br></pre></td></tr></table></figure></p>
+<p>enableSelfPreservation（eureka的自我保护模式）为false，就是文章前头提到的在Eureka自我保护模式关闭的情况下会清除该已经死掉的服务的注册信息。<br>所谓的自我保护模式是指，出现网络分区、Eureka在短时间内丢失过多的服务时，会进入自我保护模式。</p>
+<p>serviceUrl说明了eureka server的地址，也就是微服务都要注册到这个eureka server上以便eureka可以发现这些服务。<br>register-with-eureka：false与fetch-registry: false，也就是服务不会注册到eureka server上，放在这里的意思就是说eureka server本身不需要注册到eureka上。</p>
+<p>serviceUrl.defaultZone非常重要，这个说明了euraka server注册的地址，这样微服务架构中的服务提供者可以将自己通过这个地址注册上来。</p>
+<p><strong>3. 修改项目的运行主类，在这个主类上追加有Eureka客户端的启用注解：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package com.cmbchina.cc.eap;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;</span><br><span class="line"></span><br><span class="line">@SpringBootApplication</span><br><span class="line">@EnableEurekaServer</span><br><span class="line">public class EurekaServerApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(EurekaServerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此时，启动这个项目文件访问localhost:8099，可以看到如下页面：<br><img src="/images/eureka-server-page.png" alt="eureka server page" title="eureka server page"></p>
+
+  </section>
+
+</article>
+
+
+<section class="post-comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="http://yoursite.com/2018/12/14/spring-cloud之eureka配置/" data-title="spring cloud之eureka配置" data-url="http://yoursite.com/2018/12/14/spring-cloud之eureka配置/"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"mlongbo"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+
+
+              <footer class="footer">
+	   <span class="footer__copyright"> 欢迎大家访问我的 <a href="https://github.com/xiaoyanzhuzzh" rel="author">GitHub</a></span>
+</footer>
+        </div>
+    </div>
+    
+    <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="/js/main.js"></script>
+
+    <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+</body>
+</html>
