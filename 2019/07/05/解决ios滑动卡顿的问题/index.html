@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>AWS实战(2) | Jaden慧小zhi</title>
+    <title>解决ios滑动卡顿的问题 | Jaden慧小zhi</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="一名准ThoughtWorker。">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="AWS实战(2) | Jaden慧小zhi">
+    <meta name="twitter:title" content="解决ios滑动卡顿的问题 | Jaden慧小zhi">
     <meta name="twitter:description" content="一名准ThoughtWorker。"">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="AWS实战(2) | Jaden慧小zhi">
+    <meta property="og:title" content="解决ios滑动卡顿的问题 | Jaden慧小zhi">
     <meta property="og:description" content="一名准ThoughtWorker。"">
 
   
@@ -38,7 +38,7 @@
     <meta name="generator" content="hexo" />
     
     
-    <link rel="canonical" href="http://yoursite.com/2018/08/22/AWS实战-2/" />
+    <link rel="canonical" href="http://yoursite.com/2019/07/05/解决ios滑动卡顿的问题/" />
 
     
     <link rel="author" href="https://www.google.com" />
@@ -139,39 +139,27 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2018-08-22T07:35:48.000Z" class="post-list__meta--date date">2018-08-22</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/AWS/">AWS</a>
+      <time datetime="2019-07-05T08:13:47.000Z" class="post-list__meta--date date">2019-07-05</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/前端，兼容性/">前端，兼容性</a>
 </span>
       <!--<span class="post-meta__author author"><img src="{{author.image}}" alt="profile image for {{author.name}}" class="avatar post-meta__avatar" /> by {{author.name}}</span>-->
     </div>
-    <h1 class="post-title">AWS实战(2)</h1>
+    <h1 class="post-title">解决ios滑动卡顿的问题</h1>
   </header>
 
   <section class="post">
-    <p>本期AWS实战主要接受如何搭建 SERVERLESS 静态 WEB 应用。</p>
-<p>那么首先，让我们来了解什么是 SERVERLESS 和静态 WEB:</p>
+    <h1 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h1><p>最近的项目是一个混合APP（hybird App）开发模式，它可以理解为通过 Web 网络技术（如 HTML，CSS 和 JavaScript）与 Native 相结合的混合移动应用程序。</p>
+<p>H5用于大体界面的编写，如：需要一些基本的输入框、单选按钮、普通按钮、以及下拉选择框等。CSS3则是主要用于对整体界面细节化的修饰。比如：一个普通按钮，输入框边角默认是直角，那我们可以用CSS来改变其形状。还可以用来设置不同的样式。JS主要是要跟服务端打交道，实现数据交互。JS中的数据交互，主要以JSON格式跟XML格式这两种格式实现。总体来说，H5+CSS3负责界面的搭建，JS负责数据的交互。</p>
+<p>在这个项目的开发过程中，我被IOS滑动卡顿的问题长期困扰。基本上事情是这样的，当你对某个div或模块使用了overflow: scroll属性，在iOS系统的手机上浏览时，则会出现明显的卡顿现象（滑动效果就是滑一下滚动一下，而不是我们想要的那种滑一下，可以滚动一段距离的效果）。注意此问题只在IOS系统中有，Android系统没有这个问题，可以自己写一个简单的HTML验证一下。</p>
+<p>那么解决这个滑动问题就是使用这个神奇的属性-webkit-overflow-scrolling并将其值设为touch，能够解决问题的原因是因为这个属性启用了硬件加速特性，所以滑动很流畅。不清楚的话可以查看MDN的信息解释<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-overflow-scrolling" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-overflow-scrolling</a>.</p>
+<h2 id="webkit-overflow-scrolling引起的其他的问题"><a href="#webkit-overflow-scrolling引起的其他的问题" class="headerlink" title="-webkit-overflow-scrolling引起的其他的问题"></a>-webkit-overflow-scrolling引起的其他的问题</h2><p>虽然-webkit-overflow-scrolling确实启用了硬件加速特性，滑动也变得流畅，但是它带了一另外一个很tricky的问题，就是在使用的这个属性的页面会出现偶尔卡住或者不能滑动的问题。<br>常见的例子有(我做的项目中经常出现)：</p>
 <ol>
-<li>SERVERLESS: </li>
-<li>静态 WEB:</li>
+<li>当滑动到页面底部，先往下滑动在网上滑动时，发现页面卡在底部位置卡住不动</li>
+<li>当一个弹出层使用了这个属性时，我们滑动弹出层意外的其他区域，再在弹出层的区域滑动时，发现页面卡住不动</li>
+<li>当手指在斜着滑动页面时（一支手滑动通常很容易斜着滑），也会发现页面卡住不动</li>
 </ol>
-<hr>
-
-<h3 id="1-一个页面从输入URL到页面加载完的过程中都发生了什么事情"><a href="#1-一个页面从输入URL到页面加载完的过程中都发生了什么事情" class="headerlink" title="1. 一个页面从输入URL到页面加载完的过程中都发生了什么事情"></a>1. <strong>一个页面从输入URL到页面加载完的过程中都发生了什么事情</strong></h3><ul>
-<li>DNS 域名解析</li>
-<li>建立 TCPIP 连接 —— 三次握手</li>
-<li>发起 HTTP GET 请求到服务器</li>
-<li>服务器处理请求并作出响应返回 HTTP Response</li>
-<li>浏览器拿到 Response 进行解析并渲染页面（DOM 解析, cssom 解析 (<a href="https://varvy.com/performance/cssom.html)" target="_blank" rel="noopener">https://varvy.com/performance/cssom.html)</a>, js 解析等）</li>
-<li>JS 解析这个过程中如果遇到需要请求外部资源 则跟上树一样发送http请求到相应浏览器</li>
-</ul>
-<h4 id="1-1-DNS-域名解析"><a href="#1-1-DNS-域名解析" class="headerlink" title="1.1 DNS 域名解析"></a><strong>1.1 DNS 域名解析</strong></h4><ul>
-<li>DNS: Domain Name System - 域名系统</li>
-<li><em>因特⽹上作为<strong>域名</strong>和 <strong>IP 地址</strong>相互映射的⼀一个分布式数据库，能够使用户更方便的访问互联⽹。通过主机名，最终得到改主机名对应的IP地址的过程叫做域名解析。</em></li>
-</ul>
-<p><img src="/images/dns.jpg" alt="DNS 解析" title="DNS 解析"><br>对上图的解释可以看这篇文章：<a href="https://www.verisign.com/en_US/website-presence/online/how-dns-works/index.xhtml" target="_blank" rel="noopener">https://www.verisign.com/en_US/website-presence/online/how-dns-works/index.xhtml</a></p>
-<ul>
-<li></li>
-</ul>
+<p>以上都可以通过时间解决问题，就是我们等待几秒钟（2s-5s），再去滑动期望滑动区域时方可滑动流畅，但是这样的解释似乎对于用户来说很难接受，确实除了技术人员我们也很难要求其他专业领域的人员去理解。</p>
+<h2 id="对于上述引起的问题，推荐的解决方案"><a href="#对于上述引起的问题，推荐的解决方案" class="headerlink" title="对于上述引起的问题，推荐的解决方案"></a>对于上述引起的问题，推荐的解决方案</h2><p>上述问题，已经有很多前辈发现了并提供了一些解决方案，我也在项目中尝试了很多，最后发现如果不行费心，直接使用插件可能会解决这个问题，推荐的插件有iScroll，better-scroll，至于用哪一个，大家可以根据自己项目的情况或者个人喜好去选择。</p>
 
   </section>
 
@@ -180,7 +168,7 @@
 
 <section class="post-comments">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="http://yoursite.com/2018/08/22/AWS实战-2/" data-title="AWS实战(2)" data-url="http://yoursite.com/2018/08/22/AWS实战-2/"></div>
+  <div class="ds-thread" data-thread-key="http://yoursite.com/2019/07/05/解决ios滑动卡顿的问题/" data-title="解决ios滑动卡顿的问题" data-url="http://yoursite.com/2019/07/05/解决ios滑动卡顿的问题/"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">
